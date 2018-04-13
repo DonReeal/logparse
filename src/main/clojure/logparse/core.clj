@@ -1,3 +1,3 @@
-(ns log-parser.core)
+(ns logparse.core)
 
 (defn log [what] (println what))
