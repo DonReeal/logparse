@@ -1,4 +1,0 @@
-timestamp, source, value
-"2018-04-11T18:31:42:000000", "localhost","2018-04-11T18:31:42:000000|http-referer=referer-value-1|message=APP-ID-USER-LOGGED-IN
-"2018-04-11T18:31:42:000001", "localhost","2018-04-11T18:31:42:000000|http-referer=referer-value-1|message=APP-ID-USER-LOGGED-IN {userid: 123}
-"2018-04-11T18:31:42:000002", "localhost","2018-04-11T18:31:42:000000|http-referer=referer-value-1|message=APP-ID-USER-LOG-BEFORE-POST {userid: ANNONYMOUS}|irrelevant=irellevant-value
