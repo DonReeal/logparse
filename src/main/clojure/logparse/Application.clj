@@ -4,3 +4,4 @@
 
 (defn -main []
   (logparse/log "Running Clojure via java works!"))
+
