@@ -1,7 +1,10 @@
 (ns logparse.Application
-  (:require [logparse.core :as logparse])
+  (:require [clojure.test :as t]
+            [clojure.tools.cli :as cli]
+            [logparse.core :as logparse])
   (:gen-class))
 
-(defn -main []
-  (logparse/log "Running Clojure via java works!"))
+(defn -main [& args]
+  (if-not args (do  (.println *err* "Usage: !") (System/exit -1))
+    (logparse/log "TODO: implement argsparse")))
 

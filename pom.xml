@@ -27,9 +27,15 @@
       <artifactId>data.csv</artifactId>
       <version>0.1.4</version>
     </dependency>
+    <dependency>
+      <groupId>org.clojure</groupId>
+      <artifactId>tools.cli</artifactId>
+      <version>0.3.6</version>
+    </dependency>
   </dependencies>
 
   <build>
+    <finalName>logparse</finalName>
     <resources>
       <resource><directory>src/clj</directory></resource>
       <resource><directory>src/clj/resources</directory></resource>
@@ -47,6 +53,7 @@
           </sourceDirectories>
           <testSourceDirectories>
             <testSourceDirectory>src/clj-test</testSourceDirectory>
+            <testSourceDirectory>it</testSourceDirectory>
           </testSourceDirectories>
         </configuration>
         <executions>
