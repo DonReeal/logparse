@@ -53,12 +53,11 @@
           </sourceDirectories>
           <testSourceDirectories>
             <testSourceDirectory>src/clj-test</testSourceDirectory>
-            <testSourceDirectory>it</testSourceDirectory>
           </testSourceDirectories>
         </configuration>
         <executions>
           <execution>
-            <id>default</id>
+            <id>build-clj</id>
             <goals>
               <goal>add-source</goal>
               <goal>compile</goal>
@@ -83,7 +82,7 @@
               <transformers>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                   <manifestEntries>
-                      <Main-Class>logparse.Application</Main-Class>
+                    <Main-Class>logparse.Application</Main-Class>
                     <Build-Number>${BUILD_ID}</Build-Number>
                   </manifestEntries>
                 </transformer>

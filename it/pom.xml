@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>eu.donreeal</groupId>
+  <artifactId>logparse-it</artifactId>
+  <version>_IGNORED</version>
+  <packaging>jar</packaging>
+
+  <name>logparse-it</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <clojure.maven.plugin.version>1.8.1</clojure.maven.plugin.version>
+    <tested.logparse.version>1.0-SNAPSHOT</tested.logparse.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.clojure</groupId>
+      <artifactId>clojure</artifactId>
+      <version>1.9.0</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <resources>
+      <resource><directory>src/clj</directory></resource>
+      <resource><directory>src/clj/resources</directory></resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.1.0</version>
+        <executions>
+          <execution>
+            <id>copy-jar</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <artifactItems>
+            <artifactItem>
+              <groupId>eu.donreeal</groupId>
+              <artifactId>logparse</artifactId>
+              <version>${tested.logparse.version}</version>
+              <outputDirectory>${project.build.directory}</outputDirectory>
+              <destFileName>logparse.jar</destFileName>
+            </artifactItem>
+          </artifactItems>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.theoryinpractise</groupId>
+        <artifactId>clojure-maven-plugin</artifactId>
+        <version>${clojure.maven.plugin.version}</version>
+        <configuration>
+          <testSourceDirectories>
+            <testSourceDirectory>src/clj</testSourceDirectory>
+          </testSourceDirectories>
+        </configuration>
+        <executions>
+          <execution>
+            <id>run-clj-integration-tests</id>
+            <phase>integration-test</phase>
+            <goals>
+              <goal>add-test-source</goal>
+              <goal>testCompile</goal>
+              <goal>test</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
