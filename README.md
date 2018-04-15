@@ -6,7 +6,7 @@
     ```bash
     $ mvn clojure:repl
     ```
-2. run basic example from withing repl using default regex for matching events: message={event} and summarizingall events found (unfiltered):
+2. run basic example from withing repl using default regex for matching events: message={event} and summarizing all events found (unfiltered):
     ```clojure
     user=> (require '[logparse.core :as logparse])
     nil
