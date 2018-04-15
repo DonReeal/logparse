@@ -2,7 +2,7 @@
 
 ## running event-frequencies against example.csv
 
-1. launch repl (currently only possible via repl, java cli yet to come)
+1. launch repl (currently only possible via repl as java cli work in progress)
     ```bash
     $ mvn clojure:repl
     ```
